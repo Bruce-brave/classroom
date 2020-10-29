@@ -1,1 +1,2 @@
-
+打开一个文件出现编码类报错，尝试在open里面加上encoding=‘utf8’ 
+即： open('file.txt','r',encoding='utf8')
