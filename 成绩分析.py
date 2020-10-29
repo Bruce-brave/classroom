@@ -127,23 +127,6 @@ with open('new_report.txt','w+',encoding='utf8') as f:
         f.write('\n')
 
 
-# In[ ]:
-
-
-#测试行
-if 3 in [1,2,3]:
-    print('yes')
-print('数'.encode('utf8'))
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
 
 
 
