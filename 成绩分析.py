@@ -78,9 +78,11 @@ def rank_function(a):
 
 new_score_dict_list = sorted(score_dict_list, key = rank_function,reverse=True)
 print(new_score_dict_list)
-for i in score_dict_list:
+for i in new_score_dict_list:
     if i['姓名'] == '平均':
-        new_score_dict_list.insert(0,i)
+        new_score_dict_list.remove(i)
+        new_score_dict_list.insert(0, i)
+
 print(new_score_dict_list)
 
 
@@ -106,7 +108,9 @@ new_text = []
 
 for i in new_score_dict_list:
     if i['姓名'] != '平均':
-        new_text.insert(new_score_dict_list.index(i),list(i.values()))
+        new_text.append(list(i.values()))
+    else:
+        new_text.insert(0, list(i.values()))
 
 new_text.insert(0,list(new_score_dict_list[0].keys()))
 print(new_text)
@@ -125,7 +129,6 @@ with open('new_report.txt','w+',encoding='utf8') as f:
                 elif len(i.encode('utf8')) in [7,8,9]:
                     f.write('   ')
         f.write('\n')
-
 
 
 
